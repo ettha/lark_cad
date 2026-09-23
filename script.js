@@ -18,23 +18,24 @@ const cadViewer = document.getElementById("cad-viewer");
 documentList.innerHTML = "";
 
 
-documents.forEach(document => {
+documents.forEach(file => {
 
     const listItem = document.createElement("li");
-
+    const content = document.createTextNode(file.url);
+    
     const link = document.createElement("a");
     link.href = "#";
-    link.textContent = document.name;
-
+    link.textContent = file.name;
     link.onclick = function () {
 
-        const viewerUrl =
-            "https://mlightcad.com/embed.html?url="
-            + encodeURIComponent(document.url);
+         const viewerUrl =
+             "https://mlightcad.com/embed.html?url="
+             + encodeURIComponent(file.url);
 
-        cadViewer.src = viewerUrl;
+         cadViewer.src = viewerUrl;
     };
 
     listItem.appendChild(link);
+
     documentList.appendChild(listItem);
 });
