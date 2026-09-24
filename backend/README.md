@@ -1,4 +1,4 @@
-You need to add a .env repository that contains values for the foloowing parameters. 
+You need to add an .env file to this directory that contains values for the following parameters. 
 
 LARK_APP_ID=
 LARK_APP_SECRET=
